@@ -1,0 +1,49 @@
+<head>
+  <title>NumbersGame</title>
+</head>
+
+<body>
+	<!--navigation bar -->
+      <div class="navbar">
+		   <div class="navbar-inner">
+		    <a class="brand" href="#">Numbers Game</a>
+			    <ul class="nav">
+				    <li class="active"><a href="#">Home</a></li>
+				    <li><a href="#">Winners</a></li>
+				    <li>{{loginButtons}}</li>
+			    </ul>
+		   </div>
+      </div>
+      
+      <p class="muted"><h3>Pick A Number Between 1 and 100</h3></p>
+      
+      <!--template name for user input-->
+      {{> entryNum}}
+      
+      <!--template name for Guesses-->
+      {{> guesses}}
+      
+     	<!--login button-->
+      
+           
+</body>
+
+<!--create the template for inputs-->
+<template name="entryNum">
+	<!--html inputs-->
+	   <center><input type= "text" id= "guessBox" placeholder= "Enter Guess Here"></center>
+</template>
+
+<!--template for guesses-->
+<template name="guesses">
+	{{#each guesses}}
+		{{> guess}}
+	{{/each}}
+</template>
+
+<!--template for each individual guess-->
+<template name= "guess">
+	<!--echo the guess print it in bold using strong-->
+	<p><center><strong>{{guess}}</strong> is {{result}}</center></p>
+</template>
+
